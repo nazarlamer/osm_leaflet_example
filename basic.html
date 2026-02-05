@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Openstreetmap example basic</title>
+    <link rel="stylesheet" href="libs/leaflet.css" />
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #map { height: 100vh; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="libs/leaflet.js"></script>
+    <script>
+        var map = L.map('map', {
+        maxZoom: 22,
+        minZoom: 4,
+        zoomControl: false
+        }).setView([49.843040, 24.027754], 18);
+
+        var tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 22,
+            maxNativeZoom: 19
+        }).addTo(map);
+    </script>
+</body>
+</html>
